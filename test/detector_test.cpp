@@ -59,7 +59,7 @@ TYPED_TEST_CASE(DetectorTest, NewlineSeqTypes);
 
 TYPED_TEST(DetectorTest, detectsNewlineInStream)
 {
-    constexpr newline::generic_newline<TypeParam> newlineSeq{this->NewlineSeq};
+    constexpr newline::basic_newline<TypeParam> newlineSeq{this->NewlineSeq};
     constexpr newline::detector detector{newlineSeq};
 
     const std::basic_string<TypeParam> inputString{this->NewlineSeq};
@@ -71,7 +71,7 @@ TYPED_TEST(DetectorTest, detectsNewlineInStream)
 
 TYPED_TEST(DetectorTest, failsToDetectInNoNewlineStream)
 {
-    constexpr newline::generic_newline<TypeParam> newlineSeq{this->NewlineSeq};
+    constexpr newline::basic_newline<TypeParam> newlineSeq{this->NewlineSeq};
     constexpr newline::detector detector{newlineSeq};
 
     const std::basic_string<TypeParam> inputString{this->NoNewlineSeq};
@@ -83,7 +83,7 @@ TYPED_TEST(DetectorTest, failsToDetectInNoNewlineStream)
 
 TYPED_TEST(DetectorTest, failsToDetectInEmptyStream)
 {
-    constexpr newline::generic_newline<TypeParam> newlineSeq{this->NewlineSeq};
+    constexpr newline::basic_newline<TypeParam> newlineSeq{this->NewlineSeq};
     constexpr newline::detector detector{newlineSeq};
 
     const std::basic_string<TypeParam> inputString{this->EmptySeq};
@@ -95,7 +95,7 @@ TYPED_TEST(DetectorTest, failsToDetectInEmptyStream)
 
 TYPED_TEST(DetectorTest, failsToDetectInIncompleteNewlineStream)
 {
-    constexpr newline::generic_newline<TypeParam> newlineSeq{this->NewlineSeq};
+    constexpr newline::basic_newline<TypeParam> newlineSeq{this->NewlineSeq};
     constexpr newline::detector detector{newlineSeq};
 
     const std::basic_string<TypeParam> inputString{this->IncompleteNewlineSeq};
@@ -107,7 +107,7 @@ TYPED_TEST(DetectorTest, failsToDetectInIncompleteNewlineStream)
 
 TYPED_TEST(DetectorTest, failsToDetectInOffsetNewlineStream)
 {
-    constexpr newline::generic_newline<TypeParam> newlineSeq{this->NewlineSeq};
+    constexpr newline::basic_newline<TypeParam> newlineSeq{this->NewlineSeq};
     constexpr newline::detector detector{newlineSeq};
 
     const std::basic_string<TypeParam> inputString{this->OffsetNewlineSeq};

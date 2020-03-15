@@ -5,13 +5,13 @@
 namespace newline {
 
 template<typename CharT>
-using generic_newline = std::basic_string_view<CharT>;
+using basic_newline = std::basic_string_view<CharT>;
 
-using newline     = generic_newline<char>;
-using newline_w   = generic_newline<wchar_t>;
+using newline     = basic_newline<char>;
+using newline_w   = basic_newline<wchar_t>;
 using newline_u8  = newline;
-using newline_u16 = generic_newline<char16_t>;
-using newline_u32 = generic_newline<char32_t>;
+using newline_u16 = basic_newline<char16_t>;
+using newline_u32 = basic_newline<char32_t>;
 
 #define NEWLINE_DEF(NAME, NEWLINE_SEQ) \
     inline constexpr newline NAME{NEWLINE_SEQ};\
