@@ -3,6 +3,8 @@
 #include "newline/defs.h"
 
 namespace newline {
+    NEWLINE_DEF(NoNewline, "")
+
     NEWLINE_DEF(UnixNewline, "\n")
     NEWLINE_ALIAS(LinuxNewline,         UnixNewline)
     NEWLINE_ALIAS(MacOSNewline,         UnixNewline)

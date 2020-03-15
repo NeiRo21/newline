@@ -1,6 +1,6 @@
 #pragma once
 
-#include "newline/newline.hpp"
+#include "newline/defs.h"
 
 #include <istream>
 
@@ -8,7 +8,7 @@ namespace newline {
 
 template<typename CharT>
 class detector {
-    using newline_type = generic_newline<CharT>;
+    using newline_type = basic_newline<CharT>;
 
 public:
     constexpr detector(newline_type newlineSeq)
@@ -26,7 +26,7 @@ public:
 
         bool result = false;
 
-        typename stream_type::sentry se(is, true);
+        typename stream_type::sentry se{is, true};
         if (se) {
             auto sb = is.rdbuf();
             if (sb != nullptr) {
@@ -43,7 +43,11 @@ public:
     template<typename Traits>
     bool isnext(std::basic_streambuf<CharT, Traits>* sb) const
     {
-        const auto EOF_VALUE = Traits::eof();
+        if (newlineSeq_.empty()) {
+            return false;
+        }
+
+        constexpr auto EOF_VALUE = Traits::eof();
 
         bool result = true;
 
