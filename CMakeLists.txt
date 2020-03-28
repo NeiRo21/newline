@@ -1,9 +1,12 @@
-cmake_minimum_required(VERSION 3.4)
+cmake_minimum_required(VERSION 3.12)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(INC_DIR ${CMAKE_SOURCE_DIR}/include)
 set(TEST_DIR ${CMAKE_SOURCE_DIR}/test)
 
-project(util
+project(newline
         VERSION 0.1)
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -20,12 +23,14 @@ if(GTEST_FOUND)
     enable_testing()
 
     add_executable(GTestMain
+                   ${TEST_DIR}/detector_test.cpp
                    ${TEST_DIR}/getline_test.cpp)
 
     target_include_directories(GTestMain SYSTEM
                                PRIVATE ${GTEST_INCLUDE_DIR})
     target_link_libraries(GTestMain ${GTEST_BOTH_LIBRARIES} Threads::Threads)
-
-    add_test(NAME UnitTests COMMAND GTestMain)
+    gtest_discover_tests(GTestMain)
 endif()
 
+install(DIRECTORY include/ TYPE INCLUDE)
+install(FILES README.md LICENSE TYPE DOC)
