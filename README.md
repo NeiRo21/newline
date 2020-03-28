@@ -1,6 +1,6 @@
 # newline
 _newline_ is a C++17 header-only library for text processing.
-Its main feature is support of various known as well as arbitrary newline (end of line) sequences.
+Its main feature is support of various known newline (end of line) sequences as well as arbitrary user-defined ones.
 
 ### Getting started:
 Just include `newline/newline.h` to access all features.
