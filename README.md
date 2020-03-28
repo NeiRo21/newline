@@ -5,7 +5,7 @@ Its main feature is support of various known as well as arbitrary newline (end o
 ### Getting started:
 Just include `newline/newline.h` to access all features.
 
-See [Features] for details about accessing individual features.
+See **Features** for details about accessing individual features.
 
 ## Features
 | Feature | Header |
