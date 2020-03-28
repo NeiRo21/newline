@@ -1,5 +1,5 @@
 #include "newline/detector.hpp"
-#include "test_defs.hpp"
+#include "test_defs.h"
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>

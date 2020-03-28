@@ -1,6 +1,6 @@
 #pragma once
 
-#include "newline/defs.h"
+#include "newline/newline_defs.h"
 
 #include <istream>
 
