@@ -1,3 +1,8 @@
+<a href="https://scan.coverity.com/projects/neiro21-newline">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/20778/badge.svg"/>
+</a>
+
 # newline
 _newline_ is a C++17 header-only library for text processing.
 Its main feature is support of various known newline (end of line) sequences as well as arbitrary user-defined ones.
